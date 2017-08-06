@@ -54,7 +54,7 @@ else
 fi
 
 LINUX_COMPILE_BY="Spherical_Ice"
-LINUX_COMPILE_BY="SemaphoreCI"
+LINUX_COMPILE_HOST="SemaphoreCI"
 
 UTS_VERSION="#$VERSION"
 CONFIG_FLAGS=""
