@@ -443,11 +443,10 @@
 		compatible = "qcom,bcl";
 		qcom,bcl-enable;
 		qcom,bcl-framework-interface;
-		qcom,bcl-freq-control-list = <&CPU0 &CPU1 &CPU2 &CPU3
-						&CPU4 &CPU5 &CPU6 &CPU7>;
-		qcom,bcl-hotplug-list = <&CPU2 &CPU3>;
-		qcom,bcl-soc-hotplug-list = <&CPU0 &CPU1 &CPU2 &CPU3>;
-		qcom,ibat-monitor {
+		qcom,bcl-freq-control-list = <&CPU4 &CPU5>;
+		/delete-property/ qcom,bcl-hotplug-list;
+		/delete-property/ qcom,bcl-soc-hotplug-list;
+                qcom,ibat-monitor  {
 			qcom,low-threshold-uamp = <3400000>;
 			qcom,high-threshold-uamp = <4200000>;
 			qcom,mitigation-freq-khz = <998400>;
@@ -692,6 +691,8 @@
 
 		qcom,speed0-bin-v0-c1 =
 			<          0 0>,
+			<  384000000 1>,
+			<  652800000 2>,
 			<  960000000 1>,
 			< 1094400000 2>,
 			< 1248000000 4>,
@@ -713,6 +714,8 @@
 
 		qcom,speed1-bin-v0-c1 =
 			<          0 0>,
+			<  384000000 1>,
+ 			<  652800000 2>,
 			<  960000000 1>,
 			< 1094400000 2>,
 			< 1248000000 4>,
@@ -733,6 +736,8 @@
 
 		qcom,speed2-bin-v0-c1 =
 			<          0 0>,
+			<  384000000 1>,
+			<  652800000 2>,
 			<  960000000 1>,
 			< 1094400000 2>,
 			< 1209600000 3>;
@@ -762,6 +767,8 @@
 		qcom,governor-per-policy;
 
 		qcom,cpufreq-table-0 =
+			 <  384000 >,
+  			 <  652800 >,
 			 <  960000 >,
 			 < 1094400 >,
 			 < 1209600 >,
@@ -867,6 +874,8 @@
 		mincpubw-cpufreq {
 			target-dev = <&mincpubw>;
 			cpu-to-dev-map-0 =
+				<  652800 1611 >,
+				<  384000  769 >,
 				< 1094400 2929 >,
 				< 1497600 4248 >;
 			cpu-to-dev-map-4 =
