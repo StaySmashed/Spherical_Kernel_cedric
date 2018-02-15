@@ -74,7 +74,7 @@ rm -rf $ANY_KERNEL2_DIR/$FINAL_KERNEL_ZIP
 echo "**** Copying zImage ****"
 cp $KERNEL_DIR/arch/arm/boot/zImage $ANY_KERNEL2_DIR/
 echo "**** Copying dtb ****"
-cp $KERNEL_DIR/arch/arm/boot/dtb $ANY_KERNEL2_DIR/
+#cp $KERNEL_DIR/arch/arm/boot/dtb $ANY_KERNEL2_DIR/
 
 echo "**** Time to zip up! ****"
 cd $ANY_KERNEL2_DIR/
