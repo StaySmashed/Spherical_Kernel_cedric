@@ -6,7 +6,7 @@
 properties() {
 kernel.string=Spherical Kernel - Spherical Ice
 do.devicecheck=1
-do.modules=0
+do.modules=1
 do.cleanup=1
 do.cleanuponabort=0
 device.name1=cedric
