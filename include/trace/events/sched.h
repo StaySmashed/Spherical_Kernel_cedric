@@ -1281,18 +1281,10 @@ TRACE_EVENT(core_ctl_eval_need,
 		__field(u32, updated)
 	),
 	TP_fast_assign(
-		memcpy(__entry->comm, p->comm, TASK_COMM_LEN);
-		__entry->pid            = p->pid;
-		__entry->runtime        = runtime;
-		__entry->samples        = samples;
-		__entry->evt            = evt;
-		__entry->demand         = p->ravg.demand;
-		__entry->walt_avg	= (__entry->demand << 10);
-		do_div(__entry->walt_avg, walt_ravg_window);
-		__entry->pelt_avg	= p->se.avg.util_avg;
-		memcpy(__entry->hist, p->ravg.sum_history,
-					RAVG_HIST_SIZE_MAX * sizeof(u32));
-		__entry->cpu            = rq->cpu;
+		__entry->cpu = cpu;
+		__entry->old_need = old_need;
+		__entry->new_need = new_need;
+		__entry->updated = updated;
 	),
 	TP_printk("cpu=%u, old_need=%u, new_need=%u, updated=%u", __entry->cpu,
 		  __entry->old_need, __entry->new_need, __entry->updated)
